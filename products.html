@@ -31,6 +31,13 @@
 
 <script>
 
+
+var added=JSON.parse(getItem("products"))
+
+
+
+
+
 var cardarr=[{imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7139482/2022/4/21/53ff42aa-b874-465a-bcff-1c513f3fb6501650541011129RoadsterMenBlackSlimFitMid-RiseCleanLookStretchableJeans6.jpg",
 name:"Roadster",type:"Men Slip fit jeans",price:"Rs 750",discount:"60% off"},{imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13780172/2021/3/23/7bb4cb85-830e-42e0-9f33-29636a1e9aaf1616474913699-US-Polo-Assn-Men-Tshirts-161616474913222-1.jpg",
 name:"U.S.Pollo ASSN.",type:"Slim fit pure cotton",price:"Rs 1079",discount:"40% off"},
@@ -85,6 +92,11 @@ card.append(img,name,type,money,cart)
 
 document.querySelector("#container").append(card)
 
+localStorage.setItem("products",JSON.stringify(added))
+
 }
 )
 
+
+</script>
+ 
