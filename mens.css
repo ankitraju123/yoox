@@ -337,6 +337,7 @@
   
     text-align: center;
     }
+
     button{
         background-color: black;
         color: white;
@@ -349,3 +350,19 @@
        
         
     }
+    #red{
+        height:30px;
+        width:50%;
+        display: flex;
+       
+        margin-left: 50px;
+        justify-content: space-between;
+
+    }
+
+    #orig{
+        text-decoration: line-through;
+        color: rgb(226, 211, 211);
+    }
+
+   

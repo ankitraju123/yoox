@@ -32,8 +32,8 @@
 <script>
 
 
-var added=JSON.parse(getItem("products"))
 
+cardarr=JSON.parse(localStorage.getItem("products"))||[]
 
 
 
@@ -81,9 +81,11 @@ cart.innerText="add to cart"
 cart.addEventListener("click",addtocart)
 
 
-function addtocart()
+function addtocart(elem)
 {
   alert("Item added to cart")
+  
+  
 }
 
 money.append(price,discount)
@@ -92,7 +94,9 @@ card.append(img,name,type,money,cart)
 
 document.querySelector("#container").append(card)
 
-localStorage.setItem("products",JSON.stringify(added))
+
+
+
 
 }
 )
