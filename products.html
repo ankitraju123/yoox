@@ -33,7 +33,8 @@
 
 
 
-cardarr=JSON.parse(localStorage.getItem("products"))||[]
+
+
 
 
 
@@ -41,19 +42,36 @@ cardarr=JSON.parse(localStorage.getItem("products"))||[]
 var cardarr=[{imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/7139482/2022/4/21/53ff42aa-b874-465a-bcff-1c513f3fb6501650541011129RoadsterMenBlackSlimFitMid-RiseCleanLookStretchableJeans6.jpg",
 name:"Roadster",type:"Men Slip fit jeans",price:"Rs 750",discount:"60% off"},{imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13780172/2021/3/23/7bb4cb85-830e-42e0-9f33-29636a1e9aaf1616474913699-US-Polo-Assn-Men-Tshirts-161616474913222-1.jpg",
 name:"U.S.Pollo ASSN.",type:"Slim fit pure cotton",price:"Rs 1079",discount:"40% off"},
+
 {imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16320388/2021/12/16/2fa0af64-b69a-4b48-9a79-bc20bd41a6d81639644633995-U-S-Polo-Assn-Denim-Co-Men-Blue-Regallo-Skinny-Fit-Mid-Rise--5.jpg",
 name:"U.S.Pollo ASSN,Denim Co",type:"Men Skinny Fit Jeans",price:"Rs 1299",discount:"30% off"},
+
 {imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13420850/2021/2/18/a8cf7403-f462-40ab-8c8c-3af6a5e9cb871613633272510-US-Polo-Assn-Men-Tshirts-151613633271181-1.jpg",
-name:"U.S.Pollo ASSN",type:"Male tailored fit casual shirt",price:"Rs 500",discount:"20% off"},{imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16342414/2022/1/28/22c89b99-6548-4c2d-a2c7-7e71958ad6fd1643348184578-U-S-Polo-Assn-Men-Blue-Solid-Tailored-Fit-Pure-Cotton-Casual-1.jpg",
+name:"U.S.Pollo ASSN",type:"Male tailored fit casual shirt",price:"Rs 500",discount:"20% off"},
+
+{imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16342414/2022/1/28/22c89b99-6548-4c2d-a2c7-7e71958ad6fd1643348184578-U-S-Polo-Assn-Men-Blue-Solid-Tailored-Fit-Pure-Cotton-Casual-1.jpg",
 name:"United colors of Benneton",type:"Men round Neck Tshirt",price:"Rs 587",discount:"30% off"},
+
+
 {imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/13420828/2021/2/18/be7a3d2e-9828-4cbe-a561-c58ded6a18701613633242699-US-Polo-Assn-Men-Tshirts-7961613633241342-5.jpg",
 name:"U.S.Pollo ASSN",type:"Embridoiry Polo Collar",price:"Rs 1199",discount:"30% off"},
+
 {imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/16320078/2022/4/28/a5e7434a-a815-41ad-bdbd-3a5595bf19b41651145651038-U-S-Polo-Assn-Men-Black-Austin-Trim-Fit-Trousers-97616511456-1.jpg",
 name:"U.S.Pollo ASSN",type:"Men Austin Trim fit trouser",price:"Rs 1299",discount:"35% off"},
+
 {imgURL:"https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/12957154/2020/11/26/131ee1da-4270-4142-9734-834e6c57d2131606366170440-United-Colors-of-Benetton-Men-Shirts-5671606366168934-2.jpg",
 name:"United colors of Benneton",type:"Slim Fit Formal Shirt",price:"Rs 1499",discount:"40% off"}
 
 ]
+
+
+var added=JSON.parse(localStorage.getItem("addtocart"))||[]
+
+ displayData(cardarr)
+
+
+function displayData(cardarr) {
+      // document.querySelector("tbody").innerHTML = "";
 
 cardarr.forEach(function(elem){
 
@@ -78,15 +96,15 @@ discount.innerText=elem.discount
 
 var cart=document.createElement("button")
 cart.innerText="add to cart"
-cart.addEventListener("click",addtocart)
+card.style.backgroundColor="lightblue";
+card.style.color="red"
+cart.addEventListener("click",function(){
+
+  myfunction(elem)
+  alert("added to cart")
+})
 
 
-function addtocart(elem)
-{
-  alert("Item added to cart")
-  
-  
-}
 
 money.append(price,discount)
 
@@ -98,8 +116,22 @@ document.querySelector("#container").append(card)
 
 
 
+
+
 }
 )
+
+}
+
+
+function myfunction(elem){
+console.log(elem)
+added.push(elem)
+localStorage.setItem("addtocart",JSON.stringify(added))
+
+
+}
+
 
 
 </script>
